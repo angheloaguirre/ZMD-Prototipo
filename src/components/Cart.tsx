@@ -11,7 +11,7 @@ interface CartProps {
 
 export function Cart({ cart, updateQuantity, removeFromCart }: CartProps) {
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const tax = subtotal * 0.1; // 10% tax
+  const tax = subtotal * 0.18; // 18% por IGV
   const total = subtotal + tax;
 
   if (cart.length === 0) {
@@ -19,13 +19,13 @@ export function Cart({ cart, updateQuantity, removeFromCart }: CartProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center py-16">
           <ShoppingBag className="w-24 h-24 text-gray-300 mx-auto mb-6" />
-          <h2 className="mb-4">Your cart is empty</h2>
-          <p className="text-gray-600 mb-8">Add some products to get started</p>
+          <h2 className="mb-4">Tu carrito está vacío.</h2>
+          <p className="text-gray-600 mb-8">Añade productos para empezar.</p>
           <Link
             to="/catalog"
             className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
           >
-            Browse Products
+            Buscar Productos
           </Link>
         </div>
       </div>
@@ -34,10 +34,10 @@ export function Cart({ cart, updateQuantity, removeFromCart }: CartProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="mb-8">Shopping Cart</h1>
+      <h1 className="mb-8">Carrito de Compras</h1>
 
       <div className="grid lg:grid-cols-3 gap-8">
-        {/* Cart Items */}
+        {/* Items Carrito */}
         <div className="lg:col-span-2 space-y-4">
           {cart.map(item => (
             <div
@@ -82,31 +82,31 @@ export function Cart({ cart, updateQuantity, removeFromCart }: CartProps) {
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
-                  <span className="text-blue-600">${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="text-blue-600">S/. {(item.price * item.quantity).toFixed(2)}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Order Summary */}
+        {/* Resumen de la Orden */}
         <div className="lg:col-span-1">
           <div className="bg-white border border-gray-200 rounded-lg p-6 sticky top-24">
-            <h3 className="mb-6">Order Summary</h3>
+            <h3 className="mb-6">Resumen de la Orden</h3>
 
             <div className="space-y-4 mb-6">
               <div className="flex justify-between text-gray-600">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>S/. {subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-gray-600">
-                <span>Tax (10%)</span>
-                <span>${tax.toFixed(2)}</span>
+                <span>IGV (18%)</span>
+                <span>S/. {tax.toFixed(2)}</span>
               </div>
               <div className="border-t border-gray-200 pt-4">
                 <div className="flex justify-between">
                   <span>Total</span>
-                  <span className="text-blue-600">${total.toFixed(2)}</span>
+                  <span className="text-blue-600">S/. {total.toFixed(2)}</span>
                 </div>
               </div>
             </div>
@@ -115,14 +115,14 @@ export function Cart({ cart, updateQuantity, removeFromCart }: CartProps) {
               to="/checkout"
               className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors block text-center"
             >
-              Proceed to Checkout
+              Efectuar Pago
             </Link>
 
             <Link
               to="/catalog"
               className="w-full text-blue-600 hover:text-blue-700 py-3 rounded-lg block text-center mt-3"
             >
-              Continue Shopping
+              Seguir Comprando
             </Link>
           </div>
         </div>
