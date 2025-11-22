@@ -8,29 +8,29 @@ export function HomePage() {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Sección Hero */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="mb-6">Your One-Stop Shop for Electronics</h1>
+              <h1 className="mb-6" style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>Tu Solución Integral para Dispositivos Electrónicos</h1>
               <p className="mb-8 text-blue-100">
-                Professional repair services and premium accessories for all your electronic devices. 
-                Quality products, expert service, competitive prices.
+                Servicios profesionales de reparación y accesorios premium para todos tus dispositivos electrónicos.
+                Productos de calidad, servicio experto y precios competitivos.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
                   to="/catalog" 
                   className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center space-x-2"
                 >
-                  <span>Shop Now</span>
+                  <span>Comprar Ahora</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a 
                   href="#services" 
                   className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
                 >
-                  Repair Services
+                  Servicios de Reparación
                 </a>
               </div>
             </div>
@@ -45,13 +45,13 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Sección de Servicios */}
       <section id="services" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-4">Our Repair Services</h2>
+            <h2 className="mb-4" style={{ fontSize: '1.5rem' }}>Nuestros Servicios de Reparación</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Expert technicians ready to fix your devices quickly and affordably
+              Técnicos expertos listos para reparar sus dispositivos de forma rápida y asequible.
             </p>
           </div>
 
@@ -60,15 +60,15 @@ export function HomePage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Smartphone className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-3">Phone & Tablet Repair</h3>
+              <h3 className="mb-3">Reparación de Telefónos Móviles & Tabletas</h3>
               <p className="text-gray-600 mb-4">
-                Screen replacement, battery service, charging port repair, and more. Fast turnaround guaranteed.
+                Reemplazo de pantalla, servicio de batería, reparación del puerto de carga y más. Entrega rápida garantizada.
               </p>
               <ul className="space-y-2 text-gray-700">
-                <li>• Screen replacement</li>
-                <li>• Battery replacement</li>
-                <li>• Water damage repair</li>
-                <li>• Software troubleshooting</li>
+                <li>• Reemplazo de pantallas</li>
+                <li>• Reemplazo de baterías</li>
+                <li>• Reparación por daños causados por agua</li>
+                <li>• Solución de problemas de software</li>
               </ul>
             </div>
 
@@ -76,15 +76,15 @@ export function HomePage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Headphones className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-3">Audio Device Repair</h3>
+              <h3 className="mb-3">Reparación de Dispositivos de Audio</h3>
               <p className="text-gray-600 mb-4">
-                Headphones, speakers, and earbuds repair services. We fix connectivity and sound issues.
+                Servicio de reparación de auriculares, altavoces y audífonos. Solucionamos problemas de conectividad y sonido.
               </p>
               <ul className="space-y-2 text-gray-700">
-                <li>• Cable replacement</li>
-                <li>• Driver repair</li>
-                <li>• Bluetooth connectivity</li>
-                <li>• Charging issues</li>
+                <li>• Reemplazo de cables</li>
+                <li>• Reparación de controladores (drivers)</li>
+                <li>• Conectividad bluetooth</li>
+                <li>• Problemas de carga</li>
               </ul>
             </div>
 
@@ -92,28 +92,28 @@ export function HomePage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Wrench className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-3">Computer & Laptop Repair</h3>
+              <h3 className="mb-3">Reparación de Laptops & Computadoras</h3>
               <p className="text-gray-600 mb-4">
-                Hardware upgrades, virus removal, data recovery, and performance optimization.
+                Actualizaciones de hardware, eliminación de virus, recuperación de datos y optimización del rendimiento.
               </p>
               <ul className="space-y-2 text-gray-700">
-                <li>• Hardware upgrades</li>
-                <li>• Virus & malware removal</li>
-                <li>• Data recovery</li>
-                <li>• Performance optimization</li>
+                <li>• Actualizaciones de hardware</li>
+                <li>• Eliminación de virus y malware</li>
+                <li>• Recuperación de datos</li>
+                <li>• Optimización del rendimiento</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* ¿Por qué elegirnos? */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-4">Why Choose ZMD?</h2>
+            <h2 className="mb-4" style={{ fontSize: '1.5rem' }}>¿Por qué elegir ZMD?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We're committed to providing the best service and products
+              Estamos comprometidos a brindar el mejor servicio y productos.
             </p>
           </div>
 
@@ -122,9 +122,9 @@ export function HomePage() {
               <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Clock className="w-8 h-8 text-white" />
               </div>
-              <h3 className="mb-2">Fast Service</h3>
+              <h3 className="mb-2">Servicios Rápidos</h3>
               <p className="text-gray-600">
-                Most repairs completed within 24-48 hours
+                La mayoría de las reparaciones se completan en 24-48 horas.
               </p>
             </div>
 
@@ -132,9 +132,9 @@ export function HomePage() {
               <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="mb-2">Warranty Included</h3>
+              <h3 className="mb-2">Garantía Incluida</h3>
               <p className="text-gray-600">
-                All repairs come with a 90-day warranty
+                Todas las reparaciones vienen con una garantía de 90 días.
               </p>
             </div>
 
@@ -142,28 +142,28 @@ export function HomePage() {
               <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="mb-2">Expert Technicians</h3>
+              <h3 className="mb-2">Técnicos expertos</h3>
               <p className="text-gray-600">
-                Certified professionals with years of experience
+                Profesionales certificados con años de experiencia.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Productos Destacados */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h2 className="mb-2">Featured Products</h2>
-              <p className="text-gray-600">Check out our most popular accessories</p>
+              <h2 className="mb-2" style={{ fontSize: '1.5rem' }}>Productos Destacados</h2>
+              <p className="text-gray-600">Echa un vistazo a nuestros accesorios más populares</p>
             </div>
             <Link 
               to="/catalog" 
               className="text-blue-600 hover:text-blue-700 flex items-center space-x-1"
             >
-              <span>View All</span>
+              <span>Ver Todos</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -186,7 +186,7 @@ export function HomePage() {
                   <p className="text-gray-500 mb-1">{product.category}</p>
                   <h3 className="mb-2">{product.name}</h3>
                   <div className="flex items-center justify-between">
-                    <span className="text-blue-600">${product.price}</span>
+                    <span className="text-blue-600">S/. {product.price}</span>
                     <span className="text-gray-500">★ {product.rating}</span>
                   </div>
                 </div>
@@ -196,41 +196,43 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Sección de "Sobre Nosotros" */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="mb-6">About ZMD</h2>
+              <h2 className="mb-6" style={{ fontSize: '1.5rem' }}>Sobre ZMD</h2>
               <p className="text-gray-700 mb-4">
-                Founded with a passion for technology and customer service, ZMD has been serving the community 
-                for years with professional electronic repair services and quality accessories.
+                Fundada con pasión por la tecnología y el servicio al cliente, 
+                ZMD lleva años sirviendo a la comunidad con servicios profesionales 
+                de reparación electrónica y accesorios de calidad.
               </p>
               <p className="text-gray-700 mb-4">
-                Our team of certified technicians brings expertise and dedication to every repair, ensuring your 
-                devices are fixed right the first time. We stock only premium accessories from trusted brands.
+                Nuestro equipo de técnicos certificados aporta experiencia y dedicación a cada reparación, 
+                garantizando que sus dispositivos se reparen correctamente a la primera. 
+                Solo disponemos de accesorios premium de marcas de confianza.
               </p>
               <p className="text-gray-700">
-                Whether you need a quick repair or are looking for the perfect accessory, ZMD is your trusted 
-                partner for all things electronics.
+                Ya sea que necesite una reparación rápida o esté buscando el accesorio perfecto, 
+                ZMD es su socio de confianza para todo lo relacionado con la electrónica.
               </p>
             </div>
             <div className="bg-blue-600 text-white p-8 rounded-lg">
-              <h3 className="mb-6">Contact Us</h3>
+              <h3 className="mb-6" style={{ fontSize: '1.25rem' }}>Contáctanos</h3>
               <div className="space-y-4">
                 <div>
-                  <p className="opacity-80 mb-1">Phone</p>
-                  <p>+1 (555) 123-4567</p>
+                  <p className="opacity-80 mb-1">Teléfono Móvil</p>
+                  <p>+51 955 326 857</p>
                 </div>
                 <div>
-                  <p className="opacity-80 mb-1">Email</p>
-                  <p>support@zmd.com</p>
+                  <p className="opacity-80 mb-1">Correo Electrónico</p>
+                  <p>soportetecnico@zmd.com</p>
                 </div>
                 <div>
-                  <p className="opacity-80 mb-1">Hours</p>
-                  <p>Mon-Fri: 9AM - 7PM</p>
-                  <p>Sat: 10AM - 5PM</p>
-                  <p>Sun: Closed</p>
+                  <p className="opacity-80 mb-1">Horario de Atención</p>
+                  <p>Lunes: Cerrado</p>
+                  <p>Martes a Sábados: 10:00 AM - 8:00 PM</p>
+                  <p>Domingos: 10:00 AM - 3:30 PM</p>
                 </div>
               </div>
             </div>

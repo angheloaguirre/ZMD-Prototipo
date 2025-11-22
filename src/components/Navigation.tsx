@@ -25,7 +25,7 @@ export function Navigation({ cartItemCount }: NavigationProps) {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Escritorio de Navegación */}
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
@@ -33,7 +33,7 @@ export function Navigation({ cartItemCount }: NavigationProps) {
                 isActive('/') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
               }`}
             >
-              Home
+              Inicio
             </Link>
             <Link 
               to="/catalog" 
@@ -41,20 +41,20 @@ export function Navigation({ cartItemCount }: NavigationProps) {
                 isActive('/catalog') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
               }`}
             >
-              Products
+              Productos
             </Link>
             <a 
               href="#services" 
               className="text-gray-700 hover:text-blue-600 transition-colors flex items-center space-x-1"
             >
               <Wrench className="w-4 h-4" />
-              <span>Repair Services</span>
+              <span>Servicios de Reparación</span>
             </a>
             <a 
               href="#about" 
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
-              About Us
+              Sobre Nosotros
             </a>
             <Link 
               to="/cart" 
@@ -69,7 +69,7 @@ export function Navigation({ cartItemCount }: NavigationProps) {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Botón de Menú Móvil */}
           <div className="md:hidden flex items-center space-x-4">
             <Link to="/cart" className="relative text-gray-700">
               <ShoppingCart className="w-6 h-6" />
@@ -88,7 +88,7 @@ export function Navigation({ cartItemCount }: NavigationProps) {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Menú Móvil */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 space-y-2">
             <Link 
@@ -96,28 +96,28 @@ export function Navigation({ cartItemCount }: NavigationProps) {
               className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Home
+              Inicio
             </Link>
             <Link 
               to="/catalog" 
               className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Products
+              Productos
             </Link>
             <a 
               href="#services" 
               className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Repair Services
+              Servicios de Reparación
             </a>
             <a 
               href="#about" 
               className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              About Us
+              Sobre Nosotros
             </a>
           </div>
         )}

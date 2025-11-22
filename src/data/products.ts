@@ -159,7 +159,7 @@ export const products: Product[] = [
 ];
 
 export const categories = [
-  "All Products",
+  "Todos los Productos",
   "Audio",
   "Cargadores",
   "Teclados",

@@ -10,13 +10,13 @@ interface ProductCatalogProps {
 }
 
 export function ProductCatalog({ addToCart }: ProductCatalogProps) {
-  const [selectedCategory, setSelectedCategory] = useState('All Products');
+  const [selectedCategory, setSelectedCategory] = useState('Todos los Productos');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showFilters, setShowFilters] = useState(false);
 
   const filteredProducts = products.filter(product => {
-    const matchesCategory = selectedCategory === 'All Products' || product.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'Todos los Productos' || product.category === selectedCategory;
     const matchesPrice = product.price >= priceRange[0] && product.price <= priceRange[1];
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          product.category.toLowerCase().includes(searchQuery.toLowerCase());
@@ -26,17 +26,17 @@ export function ProductCatalog({ addToCart }: ProductCatalogProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <h1 className="mb-4">Product Catalog</h1>
-        <p className="text-gray-600">Browse our wide selection of premium electronic accessories</p>
+        <h1 className="mb-4">Catálogo de Productos</h1>
+        <p className="text-gray-600">Explore nuestra amplia selección de accesorios electrónicos de primera calidad</p>
       </div>
 
-      {/* Search and Filter Toggle */}
+      {/* Alternar búsqueda y filtro */}
       <div className="mb-8 flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
             type="text"
-            placeholder="Search products..."
+            placeholder="Buscar productos..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -47,22 +47,22 @@ export function ProductCatalog({ addToCart }: ProductCatalogProps) {
           className="sm:hidden bg-white border border-gray-300 px-4 py-3 rounded-lg flex items-center justify-center space-x-2"
         >
           <Filter className="w-5 h-5" />
-          <span>Filters</span>
+          <span>Filtros</span>
         </button>
       </div>
 
       <div className="grid lg:grid-cols-4 gap-8">
-        {/* Filters Sidebar */}
+        {/* Barra lateral de filtros */}
         <div className={`lg:col-span-1 ${showFilters ? 'block' : 'hidden lg:block'}`}>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 sticky top-24">
             <div className="flex items-center justify-between mb-6">
-              <h3>Filters</h3>
+              <h3>Filtros</h3>
               <Filter className="w-5 h-5 text-gray-500" />
             </div>
 
-            {/* Category Filter */}
+            {/* Filtro de categorías */}
             <div className="mb-8">
-              <h4 className="mb-4">Category</h4>
+              <h4 className="mb-4">Categorías</h4>
               <div className="space-y-2">
                 {categories.map(category => (
                   <button
@@ -80,13 +80,13 @@ export function ProductCatalog({ addToCart }: ProductCatalogProps) {
               </div>
             </div>
 
-            {/* Price Range Filter */}
+            { /* Filtro de rango de precios */}
             <div>
-              <h4 className="mb-4">Price Range</h4>
+              <h4 className="mb-4">Rango de Precios</h4>
               <div className="space-y-4">
                 <div>
                   <label className="block text-gray-600 mb-2">
-                    Max Price: ${priceRange[1]}
+                    Máximo Precio: S/. {priceRange[1]}
                   </label>
                   <input
                     type="range"
@@ -99,37 +99,37 @@ export function ProductCatalog({ addToCart }: ProductCatalogProps) {
                   />
                 </div>
                 <div className="flex justify-between text-gray-600">
-                  <span>$0</span>
-                  <span>$200</span>
+                  <span>S/. 0</span>
+                  <span>S/. 200</span>
                 </div>
               </div>
             </div>
 
-            {/* Reset Filters */}
+            {/* Reestablecer Filtros */}
             <button
               onClick={() => {
-                setSelectedCategory('All Products');
+                setSelectedCategory('Todos los Productos');
                 setPriceRange([0, 200]);
                 setSearchQuery('');
               }}
               className="w-full mt-6 text-blue-600 hover:text-blue-700 py-2"
             >
-              Reset Filters
+              Reestablecer Filtros
             </button>
           </div>
         </div>
 
-        {/* Products Grid */}
+        {/* Cuadrícula de productos */}
         <div className="lg:col-span-3">
           <div className="mb-6 flex justify-between items-center">
             <p className="text-gray-600">
-              Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
+              Mostrando {filteredProducts.length} {filteredProducts.length === 1 ? 'producto' : 'productos'}
             </p>
           </div>
 
           {filteredProducts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-500">No products found matching your criteria.</p>
+              <p className="text-gray-500">No se encontraron productos que coincidan con tus criterios.</p>
             </div>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -153,7 +153,7 @@ export function ProductCatalog({ addToCart }: ProductCatalogProps) {
                       <h3 className="mb-2 hover:text-blue-600 transition-colors">{product.name}</h3>
                     </Link>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-blue-600">${product.price}</span>
+                      <span className="text-blue-600">S/. {product.price}</span>
                       <span className="text-gray-500">★ {product.rating}</span>
                     </div>
                     {product.inStock ? (
@@ -167,14 +167,14 @@ export function ProductCatalog({ addToCart }: ProductCatalogProps) {
                         })}
                         className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
                       >
-                        Add to Cart
+                        Añadir al Carrito
                       </button>
                     ) : (
                       <button
                         disabled
                         className="w-full bg-gray-300 text-gray-500 py-2 rounded-lg cursor-not-allowed"
                       >
-                        Out of Stock
+                        Fuera de Stock
                       </button>
                     )}
                   </div>

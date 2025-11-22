@@ -16,7 +16,7 @@ export function ProductDetail({ addToCart }: ProductDetailProps) {
   if (!product) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <p className="text-center text-gray-500">Product not found</p>
+        <p className="text-center text-gray-500">Producto no encontrado</p>
       </div>
     );
   }
@@ -37,18 +37,18 @@ export function ProductDetail({ addToCart }: ProductDetailProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Back Button */}
+      {/* Bottón de Retroceso */}
       <button
         onClick={() => navigate(-1)}
         className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 mb-8"
       >
         <ArrowLeft className="w-5 h-5" />
-        <span>Back</span>
+        <span>Regresar</span>
       </button>
 
-      {/* Product Details */}
+      {/* Detalle de Productos */}
       <div className="grid md:grid-cols-2 gap-12 mb-16">
-        {/* Product Image */}
+        {/* Imagen del Producto */}
         <div className="bg-gray-100 rounded-lg overflow-hidden">
           <ImageWithFallback
             src={product.image}
@@ -57,7 +57,7 @@ export function ProductDetail({ addToCart }: ProductDetailProps) {
           />
         </div>
 
-        {/* Product Info */}
+        {/* Información del Producto */}
         <div>
           <p className="text-blue-600 mb-2">{product.category}</p>
           <h1 className="mb-4">{product.name}</h1>
@@ -81,32 +81,32 @@ export function ProductDetail({ addToCart }: ProductDetailProps) {
             </span>
           </div>
 
-          {/* Price */}
+          {/* Precio */}
           <div className="mb-6">
-            <span className="text-blue-600">${product.price}</span>
+            <span className="text-blue-600">S/. {product.price}</span>
           </div>
 
-          {/* Stock Status */}
+          {/* Estado del Stock */}
           <div className="mb-6">
             {product.inStock ? (
               <span className="text-green-600 flex items-center space-x-1">
                 <Check className="w-5 h-5" />
-                <span>In Stock</span>
+                <span>En Stock</span>
               </span>
             ) : (
-              <span className="text-red-600">Out of Stock</span>
+              <span className="text-red-600">Fuera de Stock</span>
             )}
           </div>
 
-          {/* Description */}
+          {/* Descripción */}
           <div className="mb-8">
-            <h3 className="mb-3">Description</h3>
+            <h3 className="mb-3">Descripción</h3>
             <p className="text-gray-700">{product.description}</p>
           </div>
 
-          {/* Features */}
+          {/* Características */}
           <div className="mb-8">
-            <h3 className="mb-3">Features</h3>
+            <h3 className="mb-3">Características</h3>
             <ul className="space-y-2">
               {product.features.map((feature, index) => (
                 <li key={index} className="flex items-start space-x-2 text-gray-700">
@@ -117,30 +117,30 @@ export function ProductDetail({ addToCart }: ProductDetailProps) {
             </ul>
           </div>
 
-          {/* Add to Cart Button */}
+          {/* Botón Agregar al Carrito */}
           {product.inStock ? (
             <button
               onClick={handleAddToCart}
               className="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
             >
               <ShoppingCart className="w-5 h-5" />
-              <span>Add to Cart</span>
+              <span>Añadir al Carrito</span>
             </button>
           ) : (
             <button
               disabled
               className="w-full bg-gray-300 text-gray-500 py-4 rounded-lg cursor-not-allowed"
             >
-              Out of Stock
+              Fuera de Stock
             </button>
           )}
         </div>
       </div>
 
-      {/* Related Products */}
+      {/* Productos Relacionados */}
       {relatedProducts.length > 0 && (
         <div>
-          <h2 className="mb-8">Related Products</h2>
+          <h2 className="mb-8">Productos Relacionados</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {relatedProducts.map(relatedProduct => (
               <div
@@ -159,7 +159,7 @@ export function ProductDetail({ addToCart }: ProductDetailProps) {
                   <p className="text-gray-500 mb-1">{relatedProduct.category}</p>
                   <h3 className="mb-2">{relatedProduct.name}</h3>
                   <div className="flex items-center justify-between">
-                    <span className="text-blue-600">${relatedProduct.price}</span>
+                    <span className="text-blue-600">S/. {relatedProduct.price}</span>
                     <span className="text-gray-500">★ {relatedProduct.rating}</span>
                   </div>
                 </div>

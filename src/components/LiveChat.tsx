@@ -17,7 +17,7 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: 'Hello! Welcome to ZMD. How can we help you today?',
+      text: '¡Hola! Bienvenido a ZMD. ¿Cómo podemos ayudarte?',
       sender: 'support',
       timestamp: new Date()
     }
@@ -47,11 +47,11 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
     setMessages([...messages, newMessage]);
     setInputMessage('');
 
-    // Simulate auto-response
+    // Sinular auto respuesta
     setTimeout(() => {
       const autoResponse: Message = {
         id: messages.length + 2,
-        text: 'Thank you for your message. A support representative will be with you shortly.',
+        text: 'Gracias por su mensaje. Un representante de soporte se pondrá en contacto con usted en breve.',
         sender: 'support',
         timestamp: new Date()
       };
@@ -61,7 +61,7 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
 
   return (
     <>
-      {/* Chat Button */}
+      {/* Botón del Chat */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
@@ -71,14 +71,14 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
         </button>
       )}
 
-      {/* Chat Window */}
+      {/* Ventana del Chat */}
       {isOpen && (
         <div className="fixed bottom-6 right-6 w-96 max-w-[calc(100vw-3rem)] bg-white border border-gray-200 rounded-lg shadow-2xl z-50 flex flex-col h-[500px]">
-          {/* Chat Header */}
+          {/* Encabezado del Chat */}
           <div className="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
             <div>
-              <h3>ZMD Support</h3>
-              <p className="text-blue-100">We're here to help</p>
+              <h3>Soporte ZMD</h3>
+              <p className="text-blue-100">Estamos aquí para ayudarte</p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -88,7 +88,7 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
             </button>
           </div>
 
-          {/* Messages */}
+          {/* Mensajes */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map(message => (
               <div
@@ -119,15 +119,15 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Quick Actions */}
+          {/* Acciones Rápidas */}
           <div className="px-4 py-2 border-t border-gray-200">
-            <p className="text-gray-600 mb-2">Quick actions:</p>
+            <p className="text-gray-600 mb-2">Acciones rápidas:</p>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => {
                   const msg: Message = {
                     id: messages.length + 1,
-                    text: 'What are your repair services?',
+                    text: '¿Cuales son sus servicios de reparación?',
                     sender: 'user',
                     timestamp: new Date()
                   };
@@ -135,13 +135,13 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
                 }}
                 className="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200 transition-colors"
               >
-                Repair Services
+                Servicios de Reparación
               </button>
               <button
                 onClick={() => {
                   const msg: Message = {
                     id: messages.length + 1,
-                    text: 'Track my order',
+                    text: 'Seguimiento de mi pedidor',
                     sender: 'user',
                     timestamp: new Date()
                   };
@@ -149,19 +149,19 @@ export function LiveChat({ isOpen, setIsOpen }: LiveChatProps) {
                 }}
                 className="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200 transition-colors"
               >
-                Track Order
+                Seguimiento del pedido
               </button>
             </div>
           </div>
 
-          {/* Input */}
+          {/* Envío */}
           <form onSubmit={handleSendMessage} className="p-4 border-t border-gray-200">
             <div className="flex space-x-2">
               <input
                 type="text"
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
-                placeholder="Type your message..."
+                placeholder="Escribe tu mensaje..."
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
