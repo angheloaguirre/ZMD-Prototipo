@@ -13,7 +13,7 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="mb-6" style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>Tu Solución Integral para Dispositivos Electrónicos</h1>
+              <h1 className="mb-6" style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>ASADsTu Solución Integral para Dispositivos Electrónicos</h1>
               <p className="mb-8 text-blue-100">
                 Servicios profesionales de reparación y accesorios premium para todos tus dispositivos electrónicos.
                 Productos de calidad, servicio experto y precios competitivos.
