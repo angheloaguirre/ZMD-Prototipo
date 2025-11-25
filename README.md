@@ -3,6 +3,8 @@
 ## **Descripción del Proyecto**
 Este proyecto es un prototipo de la tienda en línea para **ZMD**, una microempresa peruana especializada en la reparación de dispositivos electrónicos y la venta de accesorios para tecnología. El prototipo se centra en ofrecer una experiencia digital de compra y servicio técnico de manera sencilla, eficiente y atractiva para el usuario.
 
+Enlace al prototipo desplegado en Microsoft Azure: https://calm-bush-0c7b8f70f.3.azurestaticapps.net/
+
 ## **Objetivos del Proyecto**
 - **Digitalización de ZMD**: Facilitar el proceso de compra de accesorios electrónicos y la gestión de servicios de reparación a través de una plataforma web.
 - **Expandir el Alcance**: Ampliar el mercado de ZMD más allá de su local físico mediante el uso de comercio electrónico.
